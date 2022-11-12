@@ -20,3 +20,5 @@ HEADERS  += mainwindow.h \
     train.h
 
 FORMS    += mainwindow.ui
+
+CONFIG += console

@@ -19,45 +19,60 @@ MainWindow::MainWindow(QWidget *parent) :
         trains[i] = new Train(i + 1, x, y);
     }
 
-    /*
-     * Conecta o sinal UPDATEGUI à função UPDATEINTERFACE.
-     * Ou seja, sempre que o sinal UPDATEGUI foi chamado, será executada a função UPDATEINTERFACE.
-     * Os 3 parâmetros INT do sinal serão utilizados na função.
-     * Trem1 e Trem2 são os objetos que podem chamar o sinal. Se um outro objeto chamar o
-     * sinal UPDATEGUI, não haverá execução da função UPDATEINTERFACE
-     */
-
     for (size_t i = 0; i < QUANT_TRAINS; i++) {
         connect(trains[i], SIGNAL(updateGUI(int,int,int)), SLOT(updateInterface(int,int,int)));
+//        connect(trains[i], SIGNAL(enterRegion(int,int)), SLOT(enterRegion(int,int)));
+//        connect(trains[i], SIGNAL(exitRegion(int)), SLOT(exitRegion(int)));
     }
 }
 
-//Função que será executada quando o sinal UPDATEGUI for emitido
 void MainWindow::updateInterface(int id, int x, int y){
     labels[id - 1]->setGeometry(x, y, 20, 20);
 }
+
+//void MainWindow::enterRegion(int id,int region) {
+//    if (id == 1) {
+//        if (region == 0){
+
+//        }
+//    }
+//}
+
+//void MainWindow::exitRegion(int region){
+
+//}
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-/*
- * Ao clicar, trens começam execução
- */
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_horizontalSlider_valueChanged(int value)
 {
-    for (size_t i = 0; i < QUANT_TRAINS; i++) {
-        trains[i]->start();
-    }
+    ui->label->setText(QString::number(value));
+    trains[0]->setSpeed(value);
 }
 
-/*
- * Ao clicar, trens param execução
- */
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_horizontalSlider_2_valueChanged(int value)
 {
-    for (size_t i = 0; i < QUANT_TRAINS; i++) {
-        trains[i]->terminate();
-    }
+    ui->label_2->setText(QString::number(value));
+    trains[1]->setSpeed(value);
+}
+
+void MainWindow::on_horizontalSlider_3_valueChanged(int value)
+{
+    ui->label_3->setText(QString::number(value));
+    trains[2]->setSpeed(value);
+}
+
+void MainWindow::on_horizontalSlider_4_valueChanged(int value)
+{
+    ui->label_4->setText(QString::number(value));
+    trains[3]->setSpeed(value);
+}
+
+void MainWindow::on_horizontalSlider_5_valueChanged(int value)
+{
+    ui->label_5->setText(QString::number(value));
+    trains[4]->setSpeed(value);
 }
