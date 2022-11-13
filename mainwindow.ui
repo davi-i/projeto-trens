@@ -32,7 +32,6 @@
     <property name="font">
      <font>
       <family>Monospace</family>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -170,7 +169,6 @@
     <property name="font">
      <font>
       <family>Monospace</family>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -244,7 +242,6 @@
     <property name="font">
      <font>
       <family>Monospace</family>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -350,7 +347,6 @@
     <property name="font">
      <font>
       <family>Monospace</family>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -376,7 +372,6 @@
     <property name="font">
      <font>
       <family>Monospace</family>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -395,7 +390,7 @@
      <rect>
       <x>50</x>
       <y>360</y>
-      <width>300</width>
+      <width>350</width>
       <height>140</height>
      </rect>
     </property>
@@ -416,7 +411,7 @@ border: 1px inset #777
       <rect>
        <x>45</x>
        <y>40</y>
-       <width>200</width>
+       <width>250</width>
        <height>20</height>
       </rect>
      </property>
@@ -440,7 +435,7 @@ background-color:white;
       <rect>
        <x>45</x>
        <y>60</y>
-       <width>200</width>
+       <width>250</width>
        <height>20</height>
       </rect>
      </property>
@@ -466,7 +461,7 @@ background-color:white;
       <rect>
        <x>45</x>
        <y>80</y>
-       <width>200</width>
+       <width>250</width>
        <height>20</height>
       </rect>
      </property>
@@ -491,7 +486,7 @@ background-color:white;
       <rect>
        <x>45</x>
        <y>100</y>
-       <width>200</width>
+       <width>250</width>
        <height>20</height>
       </rect>
      </property>
@@ -516,7 +511,7 @@ background-color:white;
       <rect>
        <x>45</x>
        <y>20</y>
-       <width>200</width>
+       <width>250</width>
        <height>20</height>
       </rect>
      </property>
@@ -524,6 +519,7 @@ background-color:white;
       <string notr="true">QSlider {
 selection-background-color: #9aba59;
 background-color:white;
+selection-color: yellow;
 }</string>
      </property>
      <property name="maximum">
@@ -548,7 +544,6 @@ background-color:white;
      <property name="font">
       <font>
        <family>Monospace</family>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -574,7 +569,6 @@ background-color:white;
      <property name="font">
       <font>
        <family>Monospace</family>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -600,7 +594,6 @@ background-color:white;
      <property name="font">
       <font>
        <family>Monospace</family>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -626,7 +619,6 @@ background-color:white;
      <property name="font">
       <font>
        <family>Monospace</family>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -652,7 +644,6 @@ background-color:white;
      <property name="font">
       <font>
        <family>Monospace</family>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -669,7 +660,7 @@ background-color:white;
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>300</x>
        <y>22</y>
        <width>30</width>
        <height>16</height>
@@ -678,7 +669,6 @@ background-color:white;
      <property name="font">
       <font>
        <family>Monospace</family>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -699,7 +689,7 @@ background-color:white;
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>300</x>
        <y>42</y>
        <width>30</width>
        <height>16</height>
@@ -708,7 +698,6 @@ background-color:white;
      <property name="font">
       <font>
        <family>Monospace</family>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -729,7 +718,7 @@ background-color:white;
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>300</x>
        <y>62</y>
        <width>30</width>
        <height>16</height>
@@ -738,7 +727,6 @@ background-color:white;
      <property name="font">
       <font>
        <family>Monospace</family>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -759,7 +747,7 @@ background-color:white;
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>300</x>
        <y>82</y>
        <width>30</width>
        <height>16</height>
@@ -768,7 +756,6 @@ background-color:white;
      <property name="font">
       <font>
        <family>Monospace</family>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -789,7 +776,7 @@ background-color:white;
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>300</x>
        <y>102</y>
        <width>30</width>
        <height>16</height>
@@ -798,7 +785,6 @@ background-color:white;
      <property name="font">
       <font>
        <family>Monospace</family>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -856,7 +842,6 @@ background: none;
       <font>
        <family>Monospace</family>
        <pointsize>14</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
        <underline>false</underline>
        <strikeout>false</strikeout>

@@ -1,175 +1,142 @@
 #include "train.h"
-#include <QtCore>
-
+#include <array>
 #include <iostream>
+
+#include <QtCore>
 #include <QMutex>
 
 QMutex mutex;
-bool regions[7] = {};
+bool regions[7] = {
+    false, false, true, false, true, false, false
+};
 
 Train::Train(int ID, int x, int y){
     this->ID = ID;
     this->curr_pos.x = this->start_pos.x = x;
     this->curr_pos.y = this->start_pos.y = y;
-    speed = 50;
+}
+
+template <unsigned int N>
+bool enter_regions(std::array<int, N> regions_to_enter) {
+    mutex.lock();
+    for (auto region : regions_to_enter) {
+        if (regions[region]) {
+            mutex.unlock();
+            return false;
+        }
+    }
+    for (auto region : regions_to_enter) {
+        regions[region] = true;
+        std::cout << "registring region " << region << '\n';
+    }
+    mutex.unlock();
+    return true;
+}
+
+void exit_region( int region ) {
+    mutex.lock();
+    regions[region] = false;
+    std::cout << "exiting region " << region << '\n';
+    mutex.unlock();
 }
 
 void Train::run(){
     while (true) {
+        msleep(201 - speed);
+
         if ( curr_pos.x < start_pos.x + 250 && curr_pos.y == start_pos.y ) {
             if (curr_pos.x == start_pos.x + 230) {
                 if (ID == 1) {
-                    mutex.lock();
-                    if (!regions[0] && !regions[2]) {
-                        regions[0] = true;
-                        regions[2] = true;
-                        curr_pos.x += 5;
+                    if (!enter_regions<2u>({0, 2})) {
+                        continue;
                     }
-                    mutex.unlock();
                 } else if (ID == 2) {
-                    mutex.lock();
-                    if (!regions[0] && !regions[1] && !regions[3] && !regions[4]) {
-                        regions[0] = true;
-                        regions[1] = true;
-                        regions[3] = true;
-                        regions[4] = true;
-                        curr_pos.x += 5;
+                    if (!enter_regions<4u>({0, 1, 3, 4})) {
+                        continue;
                     }
-                    mutex.unlock();
-                } else {
-                    curr_pos.x += 5;
                 }
             } else {
                 if (curr_pos.x == start_pos.x) {
                     if (ID == 2) {
-                        mutex.lock();
-                        regions[0] = false;
-                        mutex.unlock();
+                        exit_region(0);
                     } else if (ID == 3) {
-                        mutex.lock();
-                        regions[1] = false;
-                        mutex.unlock();
+                        exit_region(1);
                     }  else if (ID == 5) {
-                        mutex.lock();
-                        regions[6] = false;
-                        mutex.unlock();
+                        exit_region(2);
                     }
                 } else if (curr_pos.x == start_pos.x + 135) {
                     if (ID == 4) {
-                        mutex.lock();
-                        regions[2] = false;
-                        mutex.unlock();
+                        exit_region(2);
                     } else if (ID == 5) {
-                        mutex.lock();
-                        regions[4] = false;
-                        mutex.unlock();
+                        exit_region(4);
                     }
                 }
-                curr_pos.x += 5;
             }
+            curr_pos.x += 5;
         } else if ( curr_pos.x == start_pos.x + 250 && curr_pos.y < start_pos.y + 120 ) {
             if (curr_pos.y == start_pos.y + 20) {
                 if (ID == 4) {
-                    mutex.lock();
-                    regions[3] = false;
-                    mutex.unlock();
+                    exit_region(3);
                 } else if (ID == 5) {
-                    mutex.lock();
-                    regions[5] = false;
-                    mutex.unlock();
+                    exit_region(5);
                 }
             }
             curr_pos.y += 5;
         } else if ( curr_pos.x > start_pos.x - 20 && curr_pos.y == start_pos.y + 120 ) {
             if (curr_pos.x == start_pos.x + 135) {
                 if (ID == 3) {
-                    mutex.lock();
-                    if (!regions[1] && !regions[5]) {
-                        regions[1] = true;
-                        regions[5] = true;
-                        curr_pos.x -= 5;
+                    if (!enter_regions<2u>({1, 5})) {
+                        continue;
                     }
-                    mutex.unlock();
-                } else {
-                    curr_pos.x -= 5;
                 }
             } else if (curr_pos.x == start_pos.x) {
                 if (ID == 5) {
-                    mutex.lock();
-                    if (!regions[4] && !regions[5] && !regions[6]) {
-                        regions[4] = true;
-                        regions[5] = true;
-                        regions[6] = true;
-                        curr_pos.x -= 5;
+                    if (!enter_regions<3u>({4, 5, 6})) {
+                        continue;
                     }
-                    mutex.unlock();
-                } else {
-                    curr_pos.x -= 5;
                 }
             } else {
                 if (curr_pos.x == start_pos.x + 230) {
                     if (ID == 1) {
-                        mutex.lock();
-                        regions[0] = false;
-                        mutex.unlock();
+                        exit_region(0);
                     } else if (ID == 2) {
-                        mutex.lock();
-                        regions[1] = false;
-                        mutex.unlock();
+                        exit_region(1);
                     } else if (ID == 4) {
-                        mutex.lock();
-                        regions[6] = false;
-                        mutex.unlock();
+                        exit_region(6);
                     }
                 } else if (curr_pos.x == start_pos.x + 95) {
                     if (ID == 1) {
-                        mutex.lock();
-                        regions[2] = false;
-                        mutex.unlock();
+                        exit_region(2);
                     } else if (ID == 2) {
-                        mutex.lock();
-                        regions[4] = false;
-                        mutex.unlock();
+                        exit_region(4);
                     }
                 }
-                curr_pos.x -= 5;
             }
+            curr_pos.x -= 5;
         } else {
             if (curr_pos.y == start_pos.y + 20) {
                 if (ID == 4) {
-                    mutex.lock();
-                    if (!regions[2] && !regions[3] && !regions[6]) {
-                        regions[2] = true;
-                        regions[3] = true;
-                        regions[6] = true;
-                        curr_pos.y -= 5;
+                    if (!enter_regions<3u>({2, 3, 6})) {
+                        continue;
                     }
-                    mutex.unlock();
-                } else {
-                    curr_pos.y -= 5;
                 }
             } else {
                 if (curr_pos.y == start_pos.y + 100) {
                     if (ID == 2) {
-                        mutex.lock();
-                        regions[3] = false;
-                        mutex.unlock();
+                        exit_region(3);
                     } else if (ID == 3) {
-                        mutex.lock();
-                        regions[5] = false;
-                        mutex.unlock();
+                        exit_region(5);
                     }
                 }
-                curr_pos.y -= 5;
             }
+            curr_pos.y -= 5;
         }
         emit updateGUI(ID, curr_pos.x, curr_pos.y);
-        msleep(speed);
     }
 }
 
 void Train::setSpeed( int speed ) {
-    this->speed = 200 - speed;
+    this->speed = speed;
     if (speed == 0)
         this->terminate();
     else if (!this->isRunning())
