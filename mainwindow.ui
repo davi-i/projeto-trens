@@ -31,6 +31,7 @@
     </property>
     <property name="font">
      <font>
+      <family>Monospace</family>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -168,6 +169,7 @@
     </property>
     <property name="font">
      <font>
+      <family>Monospace</family>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -241,6 +243,7 @@
     </property>
     <property name="font">
      <font>
+      <family>Monospace</family>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -346,6 +349,7 @@
     </property>
     <property name="font">
      <font>
+      <family>Monospace</family>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -371,6 +375,7 @@
     </property>
     <property name="font">
      <font>
+      <family>Monospace</family>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -397,7 +402,7 @@
     <property name="styleSheet">
      <string notr="true">QFrame {background-color: white;
 border-radius: 10px;
-border: 1px solid #777
+border: 1px inset #777
 }</string>
     </property>
     <property name="frameShape">
@@ -542,6 +547,7 @@ background-color:white;
      </property>
      <property name="font">
       <font>
+       <family>Monospace</family>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -567,6 +573,7 @@ background-color:white;
      </property>
      <property name="font">
       <font>
+       <family>Monospace</family>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -592,6 +599,7 @@ background-color:white;
      </property>
      <property name="font">
       <font>
+       <family>Monospace</family>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -617,6 +625,7 @@ background-color:white;
      </property>
      <property name="font">
       <font>
+       <family>Monospace</family>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -642,6 +651,7 @@ background-color:white;
      </property>
      <property name="font">
       <font>
+       <family>Monospace</family>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -667,6 +677,7 @@ background-color:white;
      </property>
      <property name="font">
       <font>
+       <family>Monospace</family>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -696,6 +707,7 @@ background-color:white;
      </property>
      <property name="font">
       <font>
+       <family>Monospace</family>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -725,6 +737,7 @@ background-color:white;
      </property>
      <property name="font">
       <font>
+       <family>Monospace</family>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -754,6 +767,7 @@ background-color:white;
      </property>
      <property name="font">
       <font>
+       <family>Monospace</family>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -783,6 +797,7 @@ background-color:white;
      </property>
      <property name="font">
       <font>
+       <family>Monospace</family>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -799,6 +814,110 @@ background-color:white;
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>380</y>
+      <width>392</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {
+background-color: rgba(255, 255, 255, 230);
+border: 2px outset #777;
+}
+
+QLabel {
+border: none;
+background: none;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>101</x>
+       <y>10</y>
+       <width>192</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Monospace</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+       <underline>false</underline>
+       <strikeout>false</strikeout>
+       <stylestrategy>PreferDefault</stylestrategy>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="text">
+      <string>Projeto dos Trens</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>29</x>
+       <y>40</y>
+       <width>334</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Monospace</family>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fernando G. Almeida&lt;span style=&quot; font-weight:600; font-style:italic; color:#ff0000; vertical-align:super;&quot;&gt;1&lt;/span&gt; e José Davi V. Francelino&lt;span style=&quot; font-weight:600; font-style:italic; color:#ff0000; vertical-align:super;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>65</y>
+       <width>370</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Monospace</family>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic; color:#ff0000; vertical-align:super;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Universidade Federal do Rio Grande do Norte — UFRN,&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>80</y>
+       <width>201</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Instituto Metrópole Digital — IMD&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </widget>
@@ -823,6 +942,7 @@ background-color:white;
    <zorder>label_trilho2_5</zorder>
    <zorder>label_trem4</zorder>
    <zorder>label_trem5</zorder>
+   <zorder>frame_2</zorder>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
