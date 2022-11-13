@@ -13,10 +13,18 @@ MainWindow::MainWindow(QWidget *parent) :
     labels[3] = ui->label_trem4;
     labels[4] = ui->label_trem5;
 
+    int speed[5] = {
+        ui->horizontalSlider->value(),
+        ui->horizontalSlider_2->value(),
+        ui->horizontalSlider_3->value(),
+        ui->horizontalSlider_4->value(),
+        ui->horizontalSlider_5->value(),
+    };
+
     for (size_t i = 0; i < QUANT_TRAINS; i++) {
         auto x = labels[i]->geometry().x();
         auto y = labels[i]->geometry().y();
-        trains[i] = new Train(i + 1, x, y);
+        trains[i] = new Train(i + 1, x, y, speed[i]);
     }
 
     for (size_t i = 0; i < QUANT_TRAINS; i++) {
@@ -49,30 +57,35 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_horizontalSlider_valueChanged(int value)
 {
+    std::cout << "chaged speed of T1 to " << value << '\n';
     ui->label->setText(QString::number(value));
     trains[0]->setSpeed(value);
 }
 
 void MainWindow::on_horizontalSlider_2_valueChanged(int value)
 {
+    std::cout << "chaged speed of T2 to " << value << '\n';
     ui->label_2->setText(QString::number(value));
     trains[1]->setSpeed(value);
 }
 
 void MainWindow::on_horizontalSlider_3_valueChanged(int value)
 {
+    std::cout << "chaged speed of T3 to " << value << '\n';
     ui->label_3->setText(QString::number(value));
     trains[2]->setSpeed(value);
 }
 
 void MainWindow::on_horizontalSlider_4_valueChanged(int value)
 {
+    std::cout << "chaged speed of T4 to " << value << '\n';
     ui->label_4->setText(QString::number(value));
     trains[3]->setSpeed(value);
 }
 
 void MainWindow::on_horizontalSlider_5_valueChanged(int value)
 {
+    std::cout << "chaged speed of T5 to " << value << '\n';
     ui->label_5->setText(QString::number(value));
     trains[4]->setSpeed(value);
 }

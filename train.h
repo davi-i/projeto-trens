@@ -2,6 +2,7 @@
 #define TRAIN_H
 
 #include <QThread>
+#include <iostream>
 
 struct Position {
     int x;
@@ -11,7 +12,7 @@ struct Position {
 class Train: public QThread{
  Q_OBJECT
 public:
-    Train(int,int,int);
+    Train(int,int,int,int);
     void run();
     void setSpeed(int);
 //    void enterRegion(int,int);
