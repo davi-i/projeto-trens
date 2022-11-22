@@ -52,7 +52,7 @@ void Train::run(){
                         continue;
                     }
                 } else if (ID == 2) {
-                    if (!enter_regions<2u>({1, 4})) {
+                    if (!enter_regions<1u>({1})) {
                         continue;
                     }
                 }
@@ -90,12 +90,18 @@ void Train::run(){
                 } else if (ID == 5) {
                     exit_region(5);
                 }
+            } else if (curr_pos.y == start_pos.y + 100) {
+                if (ID == 2) {
+                    if (!enter_regions<1u>({4})) {
+                        continue;
+                    }
+                }
             }
             curr_pos.y += 5;
         } else if ( curr_pos.x > start_pos.x - 20 && curr_pos.y == start_pos.y + 120 ) {
             if (curr_pos.x == start_pos.x + 135) {
                 if (ID == 2) {
-                    if (!enter_regions<2u>({0, 3})) {
+                    if (!enter_regions<1u>({3})) {
                         continue;
                     }
                 } else if (ID == 3) {
@@ -105,7 +111,11 @@ void Train::run(){
                 }
             } else if (curr_pos.x == start_pos.x) {
                 if (ID == 5) {
-                    if (!enter_regions<2u>({4, 6})) {
+                    if (!enter_regions<1u>({6})) {
+                        continue;
+                    }
+                } else if (ID == 2) {
+                    if (!enter_regions<1u>({0})) {
                         continue;
                     }
                 }
@@ -128,6 +138,10 @@ void Train::run(){
             if (curr_pos.y == start_pos.y + 20) {
                 if (ID == 4) {
                     if (!enter_regions<1u>({2})) {
+                        continue;
+                    }
+                } else if (ID == 5) {
+                    if (!enter_regions<1u>({4})) {
                         continue;
                     }
                 }

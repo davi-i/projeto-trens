@@ -21,8 +21,6 @@ class MainWindow : public QMainWindow {
 
     public slots:
         void updateInterface(int,int,int);
-//        void enterRegion(int,int);
-//        void exitRegion(int);
 
     private slots:
         void on_horizontalSlider_valueChanged(int value);

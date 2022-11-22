@@ -27,28 +27,13 @@ MainWindow::MainWindow(QWidget *parent) :
         trains[i] = new Train(i + 1, x, y, speed[i]);
     }
 
-    for (size_t i = 0; i < QUANT_TRAINS; i++) {
+    for (size_t i = 0; i < QUANT_TRAINS; i++)
         connect(trains[i], SIGNAL(updateGUI(int,int,int)), SLOT(updateInterface(int,int,int)));
-//        connect(trains[i], SIGNAL(enterRegion(int,int)), SLOT(enterRegion(int,int)));
-//        connect(trains[i], SIGNAL(exitRegion(int)), SLOT(exitRegion(int)));
-    }
 }
 
 void MainWindow::updateInterface(int id, int x, int y){
     labels[id - 1]->setGeometry(x, y, 20, 20);
 }
-
-//void MainWindow::enterRegion(int id,int region) {
-//    if (id == 1) {
-//        if (region == 0){
-
-//        }
-//    }
-//}
-
-//void MainWindow::exitRegion(int region){
-
-//}
 
 MainWindow::~MainWindow()
 {

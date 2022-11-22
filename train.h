@@ -15,8 +15,6 @@ public:
     Train(int,int,int,int);
     void run();
     void setSpeed(int);
-//    void enterRegion(int,int);
-//    void exitRegion(int);
 
 signals:
     void updateGUI(int,int,int);
